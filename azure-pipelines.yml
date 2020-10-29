@@ -10,7 +10,7 @@ stages:
  - stage: Build
    jobs:
    - job: Build
-  pool:
+pool:
     vmImage: 'windows-latest'
 
 - task: VSBuild@1
