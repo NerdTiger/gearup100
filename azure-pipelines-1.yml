@@ -58,4 +58,5 @@ stages:
         azureSubscription: 'Visual Studio Enterprise – MPN (a703a785-a086-4d8c-8670-d6f26c59de6d)'
         appType: 'webApp'
         WebAppName: 'WebApplicationforDevOps'
-        packageForLinux: '$(System.DefaultWorkingDirectory)/WebApplicationforDevOps/drop/*.zip'
+        packageForLinux: '$(System.DefaultWorkingDirectory)/drop/*.zip'
+    - task: PublishBuildArtifacts@1
