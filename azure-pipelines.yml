@@ -10,11 +10,10 @@ stages:
  - stage: Build
    jobs:
    - job: Build
+pool:
+  vmImage: 'windows-latest'
 
-  pool:
-    vmImage: 'windows-latest'
-
-  - task: VSBuild@1
-    inputs:
-      solution: '**\*.sln'
-      vsVersion: '16.0'
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    vsVersion: '16.0'
