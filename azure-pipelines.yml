@@ -12,8 +12,3 @@ stages:
    - job: Build
 pool:
     vmImage: 'windows-latest'
-
-- task: VSBuild@1
-  inputs:
-    solution: '**\*.sln'
-    vsVersion: '16.0'
