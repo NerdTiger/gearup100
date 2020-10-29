@@ -28,13 +28,3 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Visual Studio Enterprise – MPN (a703a785-a086-4d8c-8670-d6f26c59de6d)'
-    appType: 'webApp'
-    appName: 'WebApplicationforDevOps'
-    deployToSlotOrASE: true
-    resourceGroupName: 'devops'
-    slotName: 'production'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
