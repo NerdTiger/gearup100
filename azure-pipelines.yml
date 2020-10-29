@@ -20,10 +20,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Visual Studio Enterprise – MPN (a703a785-a086-4d8c-8670-d6f26c59de6d)'
-    appType: 'webApp'
-    WebAppName: 'WebApplicationforDevOps'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/drop/*.zip'
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Visual Studio Enterprise – MPN (a703a785-a086-4d8c-8670-d6f26c59de6d)'
+        appType: 'webApp'
+        WebAppName: 'WebApplicationforDevOps'
+        packageForLinux: '$(System.DefaultWorkingDirectory)/drop/*.zip'
