@@ -30,6 +30,7 @@ steps:
       # REM $SMTPMessage.Attachments.Add($attachment)
       $SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 25) 
       $SMTPClient.EnableSsl = $true 
-      $SMTPClient.Credentials = New-Object System.Net.NetworkCredential("kevintigertj@gmail.com", "yUhenantian1"); 
+      $SMTPClient.Credentials = New-Object System.Net.NetworkCredential("kevintigertj@gmail.com", "yUhenantian1")
+      $SMTPClient.UseDefaultCredentials = $false 
       # $SMTPClient.Send($SMTPMessage)
       $SMTPClient.Send($EmailFrom,$EmailTo,$Subject,$Body)
