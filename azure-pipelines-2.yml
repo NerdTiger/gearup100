@@ -15,22 +15,3 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      $EmailFrom = "kevintigertj@gmail.com"
-      $EmailTo = "zhijun.zhang@bulletproofsi.com"
-      $Subject = "Test" 
-      $Body = "Test Body" 
-      $SMTPServer = "smtp.gmail.com" 
-      # $filenameAndPath = "C:\CDF.pdf"
-      $SMTPMessage = New-Object System.Net.Mail.MailMessage($EmailFrom,$EmailTo,$Subject,$Body)
-      # REM $attachment = New-Object System.Net.Mail.Attachment($filenameAndPath)
-      # REM $SMTPMessage.Attachments.Add($attachment)
-      $SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 25) 
-      $SMTPClient.EnableSsl = $true 
-      $SMTPClient.Credentials = New-Object System.Net.NetworkCredential("kevintigertj@gmail.com", "yUhenantian1")
-      $SMTPClient.UseDefaultCredentials = $false 
-      # $SMTPClient.Send($SMTPMessage)
-      $SMTPClient.Send($EmailFrom,$EmailTo,$Subject,$Body)
